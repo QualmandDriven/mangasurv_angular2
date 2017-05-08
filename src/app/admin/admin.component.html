@@ -1,0 +1,13 @@
+<h1>Creation</h1>
+<table>
+  <tr>
+    <td><strong>Name: </strong></td>
+    <td><input [(ngModel)]="base.name" type="text" placeholder="Name"/></td>
+  </tr>
+  <tr>
+    <td><strong>FileSystemName: </strong></td>
+    <td><input [(ngModel)]="base.fileSystemName" type="text" placeholder="File system name"/></td>
+  </tr>
+</table>
+<button class="btn-success" (click)="createManga(base)">Create Manga</button>
+<button class="btn-danger" (click)="createAnime(base)">Create Anime</button>

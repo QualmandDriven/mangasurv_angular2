@@ -1,0 +1,22 @@
+<div id="manga-detail" *ngIf="manga">
+    <h1>{{ manga.name }}</h1>
+    <div>
+        <img src="/assets/images/{{ manga.fileSystemName | stringImageReplace }}.jpg" alt="{{ manga.name }}">
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Chapter</td>
+                    <td>Enter Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let chapter of manga.chapters">
+                    <td><a href="{{ chapter.address }}" target="blank">{{ chapter.chapterNo }}</a></td>
+                    <td>{{ chapter.enterDate | amDateFormat:'LL' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

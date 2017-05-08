@@ -1,0 +1,11 @@
+<h1>
+  {{title}}
+</h1>
+<div *ngIf="auth.authenticated()">
+  <img [src]="auth.userProfile.picture" alt="" class="profile-img">
+  <p><strong>Name: </strong> {{auth.userProfile.name}}</p>
+  <p><strong>Email: </strong> {{auth.userProfile.email}}</p>
+  <p><strong>Nickname: </strong> {{auth.userProfile.nickname}}</p>
+  <p><strong>Created At: </strong> {{auth.userProfile.created_at | amDateFormat:'LL'}}</p>
+  <p><strong>Updated At: </strong> {{auth.userProfile.updated_at | amDateFormat:'LL'}}</p>
+</div>

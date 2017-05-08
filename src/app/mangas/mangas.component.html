@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+<input [(ngModel)]="filterText" type="text" placeholder="Search..."/>
+<div>
+    <div *ngFor="let manga of mangas | filterMangaSurvBase:filterText" class="overview">
+        <div class="overviewThumb">
+            <button *ngIf="manga.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowManga(manga)">- Unfollow</button>
+            <button *ngIf="!manga.followed" class="btn-success hoveraddoverview" (click)="followManga(manga)">+ Follow</button>
+            <a [routerLink]="['/mangas', manga.id]">
+                <img src="/assets/images/{{ manga.fileSystemName | stringImageReplace }}.jpg" alt="{{ manga.name }}">
+            </a>
+            <div>
+                <p>{{ manga.name }}</p>
+            </div>
+        </div>
+    </div>
+</div>

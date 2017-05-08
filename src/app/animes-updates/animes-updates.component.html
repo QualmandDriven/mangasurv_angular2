@@ -1,0 +1,42 @@
+<div>
+  <h1>{{ title }}</h1>
+
+  <div *ngIf="!auth.authenticated()">
+    <h2>Login</h2>
+    <button class="primary" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+  </div>
+  
+    <div *ngIf="auth.authenticated()">
+      <input [(ngModel)]="filterText" type="text" placeholder="Search..."/>
+      <button class="btn-success" (click)=getAnimes()>Refresh</button>
+
+      <div>
+        <div *ngFor="let anime of animes | filterMangaSurvBase:filterText" class="overview overviewWide">
+          <div class="divHalfHorizontal overviewThumb">
+            <button *ngIf="anime.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowAnime(anime)">- Unfollow</button>
+            <button *ngIf="!anime.followed" class="btn-success hoveraddoverview" (click)="followAnime(anime)">+ Follow</button>
+            <a [routerLink]="['/animes', anime.id]">
+                <img src="/assets/images/{{ anime.fileSystemName | stringImageReplace }}.jpg" alt="{{anime.name}}">
+            </a>
+            <div>
+                <p>{{ anime.name }}</p>
+            </div>
+          </div>
+          <div class="divHalfHorizontal divOverviewUpdates">
+            <div>
+              <table>
+                <tbody>
+                    <tr *ngFor="let episode of anime.episodes">
+                      <td>
+                        <a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}  |  {{ episode.enterDate | amDateFormat:'LL' }}</a>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <button class="btn btn-success" (click)=markAsRead(anime)>Mark as read</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

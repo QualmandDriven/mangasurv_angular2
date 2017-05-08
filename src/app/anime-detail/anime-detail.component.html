@@ -1,0 +1,22 @@
+<div id="anime-detail" *ngIf="anime">
+    <h1>{{ anime.name }}</h1>
+    <div>
+        <img src="/assets/images/{{ anime.fileSystemName | stringImageReplace }}.jpg" alt="{{ anime.name }}">
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Chapter</td>
+                    <td>Enter Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let episode of anime.episodes">
+                    <td><a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}</a></td>
+                    <td>{{ episode.enterDate | amDateFormat:'LL' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
