@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MangaSurvBase } from "../mangasurvbase.model";
 import { MangaService } from "../mangas/manga.service";
+import { AnimeService } from "../animes/anime.service";
 
 @Component({
   selector: 'app-admin',
@@ -13,17 +14,18 @@ export class AdminComponent implements OnInit {
   base: MangaSurvBase = new MangaSurvBase;
 
   constructor(
-    private mangaService: MangaService
+    private mangaService: MangaService,
+    private animeService: AnimeService
   ) { }
 
   ngOnInit() {
   }
 
-  createManga(manga: MangaSurvBase) {
-    this.mangaService.createManga(manga);
+  createManga(base: MangaSurvBase) {
+    this.mangaService.createManga(base);
   }
 
-  createAnime() {
-
+  createAnime(base: MangaSurvBase) {
+    this.animeService.createAnime(base);
   }
 }
