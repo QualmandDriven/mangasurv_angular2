@@ -948,6 +948,14 @@ input[type="button"].btn-block {
   width: 20px;
 }
 
+g {
+  display: none;
+}
+
+g:target {
+  display: inline;
+}
+
 .nav > li > a > span {
   margin-left: 2px;
   display: none;

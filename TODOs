@@ -1,0 +1,4 @@
+ - SVG Dateien bündeln (evtl. in eine Datei und über CSS auslesen? oder evtl. das XML in CSS einfügen anstatt einzelner Bilder)
+ - Splashpage erstellen (mit Updates der letzten 10 Tage - getrennt in Mangas und Animes)
+ - assets aus git entfernen
+  

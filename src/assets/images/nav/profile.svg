@@ -9,15 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="32px"
+   height="32px"
+   viewBox="0 0 32 32"
    version="1.1"
-   id="svg5195"
+   id="SVGRoot"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="user3.svg">
-  <defs
-     id="defs5189" />
+   sodipodi:docname="profile.svg">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,19 +23,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="232.49273"
-     inkscape:cy="519.49675"
-     inkscape:document-units="mm"
+     inkscape:zoom="8"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1016"
+     inkscape:window-x="2936"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:grid-bbox="true" />
+  <defs
+     id="defs303" />
   <metadata
-     id="metadata5192">
+     id="metadata306">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -49,29 +50,21 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Ebene 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       style="fill:#ffffff;stroke-width:0.26458332"
-       id="path5197"
-       ry="29.293154"
-       rx="24.001488"
-       cy="54.90625"
-       cx="86.367554" />
-    <ellipse
-       style="fill:#ffffff;stroke-width:0.27296069"
+     inkscape:label="Ebene 1">
+    <circle
+       style="fill:#ffffff;stroke-width:0.02931978"
        id="path5209"
-       cx="105.64435"
-       cy="73.238098"
-       rx="70.870537"
-       ry="68.791664" />
+       cx="15.375"
+       cy="11.25"
+       r="7.5" />
     <ellipse
-       style="fill:#ffffff;stroke-width:0.33651891"
+       style="fill:#ffffff;stroke-width:0.04552376"
        id="path5213"
-       cx="104.6994"
-       cy="268.65176"
-       rx="108.1012"
-       ry="136.07143" />
+       cx="16"
+       cy="38.625"
+       rx="14.75"
+       ry="18.25" />
   </g>
 </svg>

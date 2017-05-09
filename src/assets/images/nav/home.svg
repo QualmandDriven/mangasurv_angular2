@@ -9,15 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="32px"
+   height="32px"
+   viewBox="0 0 32 32"
    version="1.1"
-   id="svg265"
+   id="SVGRoot"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="home.svg">
-  <defs
-     id="defs259" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,19 +23,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-87.142857"
-     inkscape:cy="560"
-     inkscape:document-units="mm"
+     inkscape:zoom="8"
+     inkscape:cx="20.5"
+     inkscape:cy="16"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1016"
+     inkscape:window-x="2936"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:grid-bbox="true" />
+  <defs
+     id="defs241" />
   <metadata
-     id="metadata262">
+     id="metadata244">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -49,16 +50,16 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Ebene 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Ebene 1">
     <rect
-       style="fill:#ffffff;stroke-width:0.19639115"
+       style="fill:#ffffff;stroke-width:0.02351508"
        id="rect267"
-       width="176.1369"
-       height="112.6369"
-       x="19.125595"
-       y="180.58333" />
+       width="21.125"
+       height="13.464294"
+       x="5.3571472"
+       y="16.892853" />
     <path
        sodipodi:type="star"
        style="fill:#ffffff;stroke-width:0.26458332"
@@ -74,8 +75,8 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="M 183.61306,114.67108 5.2916634,114.81547 94.327322,-39.687585 Z"
-       inkscape:transform-center-x="-0.049440635"
-       inkscape:transform-center-y="-23.18725"
-       transform="matrix(1.1865277,0,0,0.90214402,-5.2881937,96.552299)" />
+       inkscape:transform-center-x="-0.0015840906"
+       inkscape:transform-center-y="-0.79471803"
+       transform="matrix(0.1437012,0,0,0.11686293,2.2965816,5.4751807)" />
   </g>
 </svg>
