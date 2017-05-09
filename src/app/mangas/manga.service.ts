@@ -7,54 +7,65 @@ import "rxjs/Rx";
 
 @Injectable()
 export class MangaService {
-    private baseUrl: string = 'http://192.168.178.70:5000/api';
 
     constructor(private http: Http) { }
     
+    getBaseUrl() : String {
+        var pathArray = location.href.split( '/' );
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+        var url = protocol + '//' + host;
+        return url;
+    }
+
+    getMangaApiUrl() : String {
+        return this.getBaseUrl() + '/api';
+    }
+
     createManga(manga: MangaSurvBase) : Promise<Response> {
-        return this.http.post(`${this.baseUrl}/mangas`, JSON.stringify({ name: manga.name, fileSystemName: manga.fileSystemName }), {headers: this.getHeaders()})
+        return this.http.post(`${this.getMangaApiUrl()}/mangas`, JSON.stringify({ name: manga.name, fileSystemName: manga.fileSystemName }), {headers: this.getHeaders()})
             .toPromise();
     }
 
     getManga(id: number) : Promise<Manga> {
-        let manga$ = this.http.get(`${this.baseUrl}/mangas/${id}?include=1`, {headers: this.getHeaders()})
+        let manga$ = this.http.get(`${this.getMangaApiUrl()}/mangas/${id}?include=1`, {headers: this.getHeaders()})
             .toPromise()
             .then(this.mapManga);
         return manga$;
     }
     
     getMangas() : Promise<Manga[]> {
-        let mangas$ = this.http.get(`${this.baseUrl}/mangas`, {headers: this.getHeaders()})
+        let mangas$ = this.http.get(`${this.getMangaApiUrl()}/mangas`, {headers: this.getHeaders()})
             .toPromise()
             .then(this.mapMangas);
         return mangas$;
     }
 
     getUserFollowedMangas() : Promise<Manga[]> {
-        let mangas$ = this.http.get(`${this.baseUrl}/users/0/mangas`, {headers: this.getHeaders()})
+        let mangas$ = this.http.get(`${this.getMangaApiUrl()}/users/0/mangas`, {headers: this.getHeaders()})
             .toPromise()
             .then(this.mapMangas);
         return mangas$;
     }
 
     getUserUpdateMangas() : Promise<Manga[]> {
-        let mangas$ = this.http.get(`${this.baseUrl}/users/0/chapters?sortby=manga`, {headers: this.getHeaders()})
+        let mangas$ = this.http.get(`${this.getMangaApiUrl()}/users/0/chapters?sortby=manga`, {headers: this.getHeaders()})
             .toPromise()
             .then(this.mapMangas);
         return mangas$;
     }
 
     followManga(manga: Manga): Promise<Response> {
-        return this.http.post(`${this.baseUrl}/users/0/mangas`, JSON.stringify({ id: manga.id }), {headers: this.getHeaders()})
+        return this.http.post(`${this.getMangaApiUrl()}/users/0/mangas`, JSON.stringify({ id: manga.id }), {headers: this.getHeaders()})
             .toPromise();
     }
 
     unfollowManga(manga: Manga): Promise<Response> {
-        return this.http.delete(`${this.baseUrl}/users/0/mangas/${manga.id}`, {headers: this.getHeaders()}).toPromise();
+        return this.http.delete(`${this.getMangaApiUrl()}/users/0/mangas/${manga.id}`, {headers: this.getHeaders()}).toPromise();
     }
 
     markAsRead(manga: Manga): Promise<Response> {
-        return this.http.delete(`${this.baseUrl}/users/0/chapters?mangaid=${manga.id}`, {headers: this.getHeaders()}).toPromise();
+        return this.http.delete(`${this.getMangaApiUrl()}/users/0/chapters?mangaid=${manga.id}`, {headers: this.getHeaders()}).toPromise();
     }
 
     private getHeaders() {
