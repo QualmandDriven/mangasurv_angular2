@@ -20,11 +20,16 @@ import { MomentModule } from 'angular2-moment/moment.module';
 import { StringImageReplacePipe } from './string-image-replace.pipe';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { FilterMangaSurvBasePipe } from './filter-mangasurvbase.pipe';
+import { FilterChapterDatePipe } from "./filter-chaptersdate.pipe";
+import { FilterEpisodeDatePipe } from "./filter-episodesdate.pipe";
 import { AdminComponent } from './admin/admin.component';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { AnimesComponent } from './animes/animes.component';
 import { AnimesFollowedComponent } from './animes-followed/animes-followed.component';
 import { AnimesUpdatesComponent } from './animes-updates/animes-updates.component';
+import { MangaFollowedDetailComponent } from './mangas-followed/manga-followed-detail/manga-followed-detail.component';
+import { AnimeFollowedDetailComponent } from "./animes-followed/anime-followed-detail/anime-followed-detail.component";
+import { NowComponent } from './now/now.component';
 
 @NgModule({
   imports: [
@@ -45,11 +50,16 @@ import { AnimesUpdatesComponent } from './animes-updates/animes-updates.componen
     StringImageReplacePipe,
     SearchbarComponent,
     FilterMangaSurvBasePipe,
+    FilterChapterDatePipe,
+    FilterEpisodeDatePipe,
     AdminComponent,
     AnimeDetailComponent,
     AnimesComponent,
     AnimesFollowedComponent,
     AnimesUpdatesComponent,
+    MangaFollowedDetailComponent,
+    AnimeFollowedDetailComponent,
+    NowComponent,
   ],
   providers: [
     // AUTH_PROVIDERS,

@@ -1,14 +1,32 @@
-import { Component }  from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
 import { Auth }       from './auth.service';
+import { MangaService } from "./mangas/manga.service";
+import { Manga } from "./mangas/manga.model";
+import { AnimeService } from "./animes/anime.service";
+import { Anime } from "./animes/anime.model";
 
 @Component({
   selector: 'home-comp',
-  template: `
-    <h4 *ngIf="auth.authenticated()">You are logged in</h4>
-    <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
-  `
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.css'],
+  providers: [MangaService, AnimeService],
 })
 
-export class HomeComponent {
-  constructor(public auth: Auth) {}
+export class HomeComponent implements OnInit {
+  constructor(public auth: Auth,
+              private mangaService: MangaService,
+              private animeService: AnimeService) {}
+
+  filterText : String = "";
+  mangas : Manga[] = [];
+  animes : Anime[] = [];
+
+  getUpdates() {
+      this.mangaService.getChapterUpdates().then(mangas => this.mangas = mangas);
+      this.animeService.getEpisodeUpdates().then(animes => this.animes = animes);
+  }
+
+  ngOnInit() { 
+      this.getUpdates();
+  }
 };

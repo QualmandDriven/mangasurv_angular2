@@ -1,0 +1,25 @@
+<div *ngIf="anime" class="overview overviewWide">
+  <div class="divHalfHorizontal overviewThumb">
+    <button *ngIf="anime.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowanime(anime)">- Unfollow</button>
+    <button *ngIf="!anime.followed" class="btn-success hoveraddoverview" (click)="followanime(anime)">+ Follow</button>
+    <a [routerLink]="['/animes', anime.id]">
+        <img src="/assets/images/{{ anime.fileSystemName | stringImageReplace }}.jpg" alt="{{anime.name}}">
+    </a>
+    <div>
+      <p>{{ anime.name }}</p>
+    </div>
+  </div>
+  <div class="divHalfHorizontal divOverviewUpdates">
+    <div>
+      <table>
+        <tbody>
+          <tr *ngFor="let episode of anime.episodes">
+            <td>
+              <a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}  |  {{ episode.enterDate | amDateFormat:'LL' }}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
