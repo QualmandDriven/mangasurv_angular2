@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
               private mangaService: MangaService,
               private animeService: AnimeService) {}
 
+  title : String = "Updates";
   filterText : String = "";
   mangas : Manga[] = [];
   animes : Anime[] = [];

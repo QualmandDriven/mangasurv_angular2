@@ -10,11 +10,9 @@ export class NowComponent implements OnInit {
   ngOnInit() {
   }
 
-   private date: Date;
-   private format: String;
+   date: Date;
+   format: String;
    private addDays: number;
-
-   private localDate: String;
    
   constructor(@Attribute("format") format, @Attribute("addDays") addDays) { 
     this.addDays = +addDays;
