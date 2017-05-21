@@ -21,7 +21,7 @@
                 <h2>
                   <app-now format="LL" addDays="0"></app-now>
                 </h2>
-                <app-manga-followed-detail *ngFor="let manga of mangas | filterChapterDatePipe:-40" [manga]="manga"></app-manga-followed-detail>
+                <app-manga-followed-detail *ngFor="let manga of mangas | filterChapterDatePipe:0" [manga]="manga"></app-manga-followed-detail>
               </td>
             </tr>
             <tr>
@@ -110,7 +110,7 @@
                 <h2>
                   <app-now format="LL" addDays="0"></app-now>
                 </h2>
-                <app-anime-followed-detail *ngFor="let anime of animes | filterEpisodeDatePipe:-40" [anime]="anime"></app-anime-followed-detail>
+                <app-anime-followed-detail *ngFor="let anime of animes | filterEpisodeDatePipe:0" [anime]="anime"></app-anime-followed-detail>
               </td>
             </tr>
             <tr>
