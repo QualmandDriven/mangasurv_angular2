@@ -26,7 +26,16 @@ export class AnimesComponent implements OnInit {
     }
 
     getAnimes() {
-        this.animeService.getAnimes().then(animes => this.animes = animes);
+        this.animeService.getAnimes().then(animes => this.animes = animes)
+        .then(() => this.animeService.getUserFollowedAnimes().then(followedAnimes => {
+            followedAnimes.forEach(folAnime => {
+                this.animes.forEach(anime => {
+                    if(anime.id == folAnime.id) {
+                        anime.followed = true;
+                    }
+                });
+            });
+        }));
     }
 
     ngOnInit() { 

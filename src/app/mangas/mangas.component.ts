@@ -26,7 +26,16 @@ export class MangasComponent implements OnInit {
     }
 
     getMangas() {
-        this.mangaService.getMangas().then(mangas => this.mangas = mangas);
+        this.mangaService.getMangas().then(mangas => this.mangas = mangas)
+        .then(() => this.mangaService.getUserFollowedMangas().then(followedmangas => {
+            followedmangas.forEach(folmanga => {
+                this.mangas.forEach(manga => {
+                    if(manga.id == folmanga.id) {
+                        manga.followed = true;
+                    }
+                });
+            });
+        }));
     }
 
     ngOnInit() { 
