@@ -6,7 +6,7 @@ export class AppService {
     
     protected getBaseUrl() : String {
         if(!environment.production) {
-            return "http://localhost:5000";
+            return "https://localhost:5000";
         }
 
         var pathArray = location.href.split( '/' );
