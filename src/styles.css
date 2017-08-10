@@ -956,13 +956,13 @@ g:target {
   display: inline;
 }
 
-.nav > li > a > span {
+li > a > span {
   margin-left: 2px;
   display: none;
 }
 
 @media (min-width: 768px) {
-  .nav > li > a > span {  
+  li > a > span {  
     display: inline;
   }
 }
