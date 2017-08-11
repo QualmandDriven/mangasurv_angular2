@@ -8,6 +8,8 @@ import { SearchbarComponent } from "../searchbar/searchbar.component";
 
 import { Auth } from "../auth.service";
 
+import { StringImageReplacePipe } from '../string-image-replace.pipe';
+
 @Component({
     selector: 'animes',
     templateUrl: 'animes.component.html',
@@ -26,7 +28,10 @@ export class AnimesComponent implements OnInit {
     }
 
     getAnimes() {
-        this.animeService.getAnimes().then(animes => this.animes = animes)
+        this.animeService.getAnimes().then(animes => {
+            this.animes = animes;
+            this.animes.forEach(anime => anime.imageName = new StringImageReplacePipe().transform(anime.fileSystemName) + '.jpg');
+        })
         .then(() => this.animeService.getUserFollowedAnimes().then(followedAnimes => {
             followedAnimes.forEach(folAnime => {
                 this.animes.forEach(anime => {

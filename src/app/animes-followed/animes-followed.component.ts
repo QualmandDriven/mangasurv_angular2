@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AnimeService } from '../animes/anime.service'
+import { AnimeService } from '../animes/anime.service';
 import { Router } from '@angular/router';
 
 import { Anime } from '../animes/anime.model';
-import { Auth } from "../auth.service";
+import { Auth } from '../auth.service';
+
+import { StringImageReplacePipe } from '../string-image-replace.pipe';
 
 @Component({
   selector: 'app-animes-followed',
@@ -26,7 +28,10 @@ export class AnimesFollowedComponent implements OnInit {
     filterText : string;
 
     getAnimes() {
-        this.animeService.getUserFollowedAnimes().then(animes => this.animes = animes);
+        this.animeService.getUserFollowedAnimes().then(animes => {
+            this.animes = animes;
+            this.animes.forEach(anime => anime.imageName = new StringImageReplacePipe().transform(anime.fileSystemName) + '.jpg');
+        });
     }
 
     ngOnInit() { 

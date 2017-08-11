@@ -8,6 +8,8 @@ import { SearchbarComponent } from "../searchbar/searchbar.component";
 
 import { Auth } from "../auth.service";
 
+import { StringImageReplacePipe } from '../string-image-replace.pipe';
+
 @Component({
     selector: 'mangas',
     templateUrl: 'mangas.component.html',
@@ -15,19 +17,21 @@ import { Auth } from "../auth.service";
     providers: [MangaService],
 })
 export class MangasComponent implements OnInit {
-    title = "List of all mangas";
+    title = 'List of all mangas';
     mangas : Manga[] = [];
     
     selectedManga : Manga;
     filterText : string;
     
     constructor(private mangaService : MangaService, private router : Router, public auth: Auth) { 
-        this.filterText = "";
+        this.filterText = '';
     }
 
     getMangas() {
-        this.mangaService.getMangas().then(mangas => this.mangas = mangas)
-        .then(() => this.mangaService.getUserFollowedMangas().then(followedmangas => {
+        this.mangaService.getMangas().then(mangas => {
+            this.mangas = mangas;
+            this.mangas.forEach(manga => manga.imageName = new StringImageReplacePipe().transform(manga.fileSystemName) + '.jpg');
+        }).then(() => this.mangaService.getUserFollowedMangas().then(followedmangas => {
             followedmangas.forEach(folmanga => {
                 this.mangas.forEach(manga => {
                     if(manga.id == folmanga.id) {

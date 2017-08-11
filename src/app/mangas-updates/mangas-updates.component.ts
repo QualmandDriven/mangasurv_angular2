@@ -8,6 +8,8 @@ import { Auth } from "../auth.service";
 
 import { MomentModule } from "angular2-moment/moment.module";
 
+import { StringImageReplacePipe } from '../string-image-replace.pipe';
+
 @Component({
   selector: 'app-mangas-updates',
   templateUrl: './mangas-updates.component.html',
@@ -28,7 +30,10 @@ export class MangasUpdatesComponent implements OnInit {
     filterText : string;
 
     getMangas() {
-        this.mangaService.getUserUpdateMangas().then(mangas => this.mangas = mangas);
+        this.mangaService.getUserUpdateMangas().then(mangas => {
+            this.mangas = mangas;
+            this.mangas.forEach(manga => manga.imageName = new StringImageReplacePipe().transform(manga.fileSystemName) + '.jpg');
+        });
     }
 
     ngOnInit() { 

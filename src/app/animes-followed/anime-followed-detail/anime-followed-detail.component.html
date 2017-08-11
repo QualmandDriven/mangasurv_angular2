@@ -1,15 +1,13 @@
-<div *ngIf="anime" class="overview overviewWide">
-  <div class="divHalfHorizontal overviewThumb">
+<div *ngIf="anime" class="overviewWide">
+  <div class="overview">
+    <a [routerLink]="['/animes', anime.id]" [style.background-image]="'url(/assets/images/' + anime.imageName + ')'"></a>
     <button *ngIf="anime.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowanime(anime)">- Unfollow</button>
     <button *ngIf="!anime.followed" class="btn-success hoveraddoverview" (click)="followanime(anime)">+ Follow</button>
-    <a [routerLink]="['/animes', anime.id]">
-        <img src="/assets/images/{{ anime.fileSystemName | stringImageReplace }}.jpg" alt="{{anime.name}}">
-    </a>
     <div>
-      <p>{{ anime.name }}</p>
+      <a [routerLink]="['/animes', anime.id]" style="color: #fff">{{ anime.name }}</a>
     </div>
   </div>
-  <div class="divHalfHorizontal divOverviewUpdates">
+  <div class="divOverviewUpdates">
     <div>
       <table>
         <tbody>

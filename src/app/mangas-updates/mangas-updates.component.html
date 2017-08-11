@@ -11,18 +11,16 @@
       <button class="btn-success" (click)=getMangas()>Refresh</button>
 
       <div>
-        <div *ngFor="let manga of mangas | filterMangaSurvBase:filterText" class="overview overviewWide">
-          <div class="divHalfHorizontal overviewThumb">
+        <div *ngFor="let manga of mangas | filterMangaSurvBase:filterText" class="overviewWide">
+          <div class="overview">
+            <a [routerLink]="['/mangas', manga.id]" [style.background-image]="'url(/assets/images/' + manga.imageName + ')'"></a>
             <button *ngIf="manga.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowManga(manga)">- Unfollow</button>
             <button *ngIf="!manga.followed" class="btn-success hoveraddoverview" (click)="followManga(manga)">+ Follow</button>
-            <a [routerLink]="['/mangas', manga.id]">
-                <img src="/assets/images/{{ manga.fileSystemName | stringImageReplace }}.jpg" alt="{{manga.name}}">
-            </a>
             <div>
-                <p>{{ manga.name }}</p>
+              <a [routerLink]="['/mangas', manga.id]" style="color: #fff">{{ manga.name }}</a>
             </div>
           </div>
-          <div class="divHalfHorizontal divOverviewUpdates">
+          <div class="divOverviewUpdates">
             <div>
               <table>
                 <tbody>

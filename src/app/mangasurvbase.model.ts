@@ -5,4 +5,5 @@ export class MangaSurvBase {
     lastUpdate: Date;
     enterDate: Date;
     followed: boolean;
+    imageName: string;
 }

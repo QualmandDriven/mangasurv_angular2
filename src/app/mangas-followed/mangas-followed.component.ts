@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Manga } from '../mangas/manga.model';
 import { Auth } from "../auth.service";
 
+import { StringImageReplacePipe } from '../string-image-replace.pipe';
+
 @Component({
   selector: 'app-mangas-followed',
   templateUrl: './mangas-followed.component.html',
@@ -26,7 +28,10 @@ export class MangasFollowedComponent implements OnInit {
     filterText : string;
 
     getMangas() {
-        this.mangaService.getUserFollowedMangas().then(mangas => this.mangas = mangas);
+        this.mangaService.getUserFollowedMangas().then(mangas => {
+            this.mangas = mangas;
+            this.mangas.forEach(manga => manga.imageName = new StringImageReplacePipe().transform(manga.fileSystemName) + '.jpg');
+        });
     }
 
     ngOnInit() { 

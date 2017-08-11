@@ -2,15 +2,11 @@
 <input [(ngModel)]="filterText" type="text" placeholder="Search..."/>
 <div>
     <div *ngFor="let anime of animes | filterMangaSurvBase:filterText" class="overview">
-        <div class="overviewThumb">
-            <button *ngIf="anime.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowManga(anime)">- Unfollow</button>
-            <button *ngIf="!anime.followed" class="btn-success hoveraddoverview" (click)="followManga(anime)">+ Follow</button>
-            <a [routerLink]="['/animes', anime.id]">
-                <img src="/assets/images/{{ anime.fileSystemName | stringImageReplace }}.jpg" alt="{{ anime.name }}">
-            </a>
-            <div>
-                <p>{{ anime.name }}</p>
-            </div>
+        <a [routerLink]="['/animes', anime.id]" [style.background-image]="'url(/assets/images/' + anime.imageName + ')'"></a>
+        <button *ngIf="anime.followed" class="btn-danger hoverdeleteoverview" (click)="unfollowanime(anime)">- Unfollow</button>
+        <button *ngIf="!anime.followed" class="btn-success hoveraddoverview" (click)="followanime(anime)">+ Follow</button>
+        <div>
+            <a [routerLink]="['/animes', anime.id]" style="color: #fff">{{ anime.name }}</a>
         </div>
     </div>
 </div>

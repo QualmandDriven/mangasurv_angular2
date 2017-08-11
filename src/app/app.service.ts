@@ -6,7 +6,8 @@ export class AppService {
     
     protected getBaseUrl() : String {
         if(!environment.production) {
-            return "https://localhost:5000";
+            return "https://mangasurv.com";
+            //return "https://localhost:5000";
         }
 
         var pathArray = location.href.split( '/' );

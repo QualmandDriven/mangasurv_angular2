@@ -6,8 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class StringImageReplacePipe implements PipeTransform {
 
   transform(value: string): string {
-    if(value != undefined)
-      return value.replace(/[ :]/g, "_");
+    if(value != undefined) {
+      return value.replace(/[ :+-]/g, "_").replace(/\(|\)/g, "_").replace(/\'/g, "_");
+    }
     return value;
   }
 

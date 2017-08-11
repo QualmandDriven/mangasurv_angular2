@@ -8,6 +8,8 @@ import { Auth } from "../auth.service";
 
 import { MomentModule } from "angular2-moment/moment.module";
 
+import { StringImageReplacePipe } from '../string-image-replace.pipe';
+
 @Component({
   selector: 'app-animes-updates',
   templateUrl: './animes-updates.component.html',
@@ -28,7 +30,10 @@ export class AnimesUpdatesComponent implements OnInit {
     filterText : string;
 
     getAnimes() {
-        this.animeService.getUserUpdateAnimes().then(animes => this.animes = animes);
+        this.animeService.getUserUpdateAnimes().then(animes => {
+            this.animes = animes;
+            this.animes.forEach(anime => anime.imageName = new StringImageReplacePipe().transform(anime.fileSystemName) + '.jpg');
+        });
     }
 
     ngOnInit() { 
