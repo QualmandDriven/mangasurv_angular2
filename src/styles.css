@@ -1111,6 +1111,12 @@ g:target {
   background-size: cover;
 }
 
+.overview > div > a
+{
+  font-size: .9em;
+  font-weight: bold;
+}
+
 .overview > div {
   bottom: 0; 
   width: 100%;
@@ -1124,7 +1130,7 @@ g:target {
 }
 
 .divOverviewUpdates {
-	width:	12em;
+	width:	11em;
 	height:	9.5em;
   float:	left;
 }
