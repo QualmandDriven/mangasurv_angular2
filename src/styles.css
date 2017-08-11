@@ -1074,8 +1074,8 @@ g:target {
 
 .overview
 {
-	width:	10em;
-	height:	13em;
+	width:	8.5em;
+	height:	11em;
 	float:	left;
 	text-align: center;
 	/*font-size: 1.3em;*/
@@ -1096,10 +1096,16 @@ g:target {
 	margin-right: 0.5em;
   float: left;
   background-color: #f1f3f4;
+  border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: #b1b3b4;
 }
 
 .overviewWide > .overview {
   margin-bottom: 0em;
+  margin-right: 0.1em;
+  border: 0;
 }
 
 .overview > a
@@ -1130,8 +1136,8 @@ g:target {
 }
 
 .divOverviewUpdates {
-	width:	11em;
-	height:	9.5em;
+	width:	9em;
+	height:	7.7em;
   float:	left;
 }
 
@@ -1144,15 +1150,13 @@ g:target {
 	margin-left: 5px;
 }
 
+.divOverviewUpdates > div > table > tbody > tr > td {
+	padding: 0px 1px 2px 0px;
+}
+
 .divOverviewUpdates > button {
 	margin-top: 10px;
 }
-.hoveraddoverview
-{
-	/*width: 50px;
-	height: 50px;*/
-}
-
 .overview .hoveraddoverview
 {
     position: absolute;

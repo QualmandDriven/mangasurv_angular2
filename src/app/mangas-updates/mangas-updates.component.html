@@ -26,7 +26,7 @@
                 <tbody>
                     <tr *ngFor="let chapter of manga.chapters">
                       <td>
-                        <a href="{{ chapter.address }}" target="blank">{{ chapter.chapterNo }}  |  {{ chapter.enterDate | amDateFormat:'LL' }}</a>
+                        <a href="{{ chapter.address }}" target="blank">{{ chapter.chapterNo }}  |  {{ chapter.enterDate | amDateFormat:'ll' }}</a>
                       </td>
                     </tr>
                 </tbody>

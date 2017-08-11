@@ -13,7 +13,7 @@
         <tbody>
           <tr *ngFor="let episode of anime.episodes">
             <td>
-              <a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}  |  {{ episode.enterDate | amDateFormat:'LL' }}</a>
+              <a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}  |  {{ episode.enterDate | amDateFormat:'ll' }}</a>
             </td>
           </tr>
         </tbody>
