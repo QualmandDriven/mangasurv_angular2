@@ -20,13 +20,13 @@
               <a [routerLink]="['/mangas', manga.id]" style="color: #fff">{{ manga.name }}</a>
             </div>
           </div>
-          <div class="divOverviewUpdates">
+          <div class="divOverviewUpdates divOverviewUpdatesButton">
             <div>
               <table>
                 <tbody>
                     <tr *ngFor="let chapter of manga.chapters">
                       <td>
-                        <a href="{{ chapter.address }}" target="blank">{{ chapter.chapterNo }}  |  {{ chapter.enterDate | amDateFormat:'ll' }}</a>
+                        <a href="{{ chapter.address }}" target="blank">{{ chapter.chapterNo }}  |  <span style="font-size: 12px;">{{ chapter.enterDate | amDateFormat:'ll' }}</span></a>
                       </td>
                     </tr>
                 </tbody>

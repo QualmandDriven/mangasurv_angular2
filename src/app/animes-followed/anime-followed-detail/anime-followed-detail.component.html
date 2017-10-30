@@ -7,13 +7,13 @@
       <a [routerLink]="['/animes', anime.id]" style="color: #fff">{{ anime.name }}</a>
     </div>
   </div>
-  <div class="divOverviewUpdates">
+  <div class="divOverviewUpdates divOverviewUpdatesWhole">
     <div>
       <table>
         <tbody>
           <tr *ngFor="let episode of anime.episodes">
             <td>
-              <a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}  |  {{ episode.enterDate | amDateFormat:'ll' }}</a>
+              <a href="{{ episode.address }}" target="blank">{{ episode.episodeNo }}  |  <span style="font-size: 12px;">{{ episode.enterDate | amDateFormat:'ll' }}</span></a>
             </td>
           </tr>
         </tbody>

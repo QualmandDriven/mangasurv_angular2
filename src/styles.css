@@ -1141,6 +1141,14 @@ g:target {
   float:	left;
 }
 
+.divOverviewUpdatesWhole {
+	height:	11em;
+}
+
+.divOverviewUpdatesButton {
+	height:	7.7em;
+}
+
 .divOverviewUpdates > div {
 	height: 100%;
 	overflow: auto;
