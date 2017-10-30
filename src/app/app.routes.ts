@@ -14,17 +14,17 @@ import { AnimesUpdatesComponent } from "./animes-updates/animes-updates.componen
 import { AnimeDetailComponent } from "./anime-detail/anime-detail.component";
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'mangas', component: MangasComponent },
   { path: 'mangas/followed', component: MangasFollowedComponent },
   { path: 'mangas/updates', component: MangasUpdatesComponent },
   { path: 'mangas/:id', component: MangaDetailComponent },
+  { path: 'mangas', component: MangasComponent },
   { path: 'animes', component: AnimesComponent },
   { path: 'animes/followed', component: AnimesFollowedComponent },
   { path: 'animes/updates', component: AnimesUpdatesComponent },
   { path: 'animes/:id', component: AnimeDetailComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'admin', component: AdminComponent },
+  { path: '', component: HomeComponent },
   { path: '**', redirectTo: '' },
 ];
 

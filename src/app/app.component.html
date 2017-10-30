@@ -6,34 +6,34 @@
         <div class="sidebar">
           <ul class="nav nav-sidebar">
             <li>
-              <a [routerLink]="['']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#home"></use></svg><span> MangaSurv</span></a>
+              <a [routerLink]="['']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#home"></use></svg><span class="navLinkText"> MangaSurv</span></a>
             </li>
           </ul>
           <ul class="nav nav-sidebar">
             <li>
-              <a *ngIf="auth.authenticated()" [routerLink]="['/profile']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#profile"></use></svg><span> Profile</span></a>
-              <a (click)="auth.login()" *ngIf="!auth.authenticated()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#login"></use></svg><span> Log In</span></a>
-              <a class="primary" (click)="auth.logout()" *ngIf="auth.authenticated()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#logout"></use></svg><span> Log Out</span></a>
+              <a *ngIf="auth.authenticated()" [routerLink]="['/profile']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#profile"></use></svg><span class="navLinkText"> Profile</span><span class="navLinkDetail"></span></a>
+              <a (click)="auth.login()" *ngIf="!auth.authenticated()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#login"></use></svg><span class="navLinkText"> Log In</span></a>
+              <a class="primary" (click)="auth.logout()" *ngIf="auth.authenticated()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#logout"></use></svg><span class="navLinkText"> Log Out</span></a>
             </li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a [routerLink]="['/mangas']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga"></use></svg><span> Mangas</span></a></li>
+            <li><a [routerLink]="['/mangas']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga"></use></svg><span class="navLinkText"> Mangas</span><span class="navLinkDetail"></span></a></li>
             <li>
-              <a *ngIf="auth.authenticated()" [routerLink]="['/mangas/followed']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_follow"></use></svg><span> Followed Mangas</span></a>
-              <a *ngIf="!auth.authenticated()" (click)="auth.login()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_follow"></use></svg><span> Followed Mangas</span></a>
+              <a *ngIf="auth.authenticated()" [routerLink]="['/mangas/followed']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_follow"></use></svg><span class="navLinkText"> Followed Mangas</span><span class="navLinkDetail"></span></a>
+              <a *ngIf="!auth.authenticated()" (click)="auth.login()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_follow"></use></svg><span class="navLinkText"> Followed Mangas</span><span class="navLinkDetail"></span></a>
             </li>
             <li>
-              <a *ngIf="auth.authenticated()" [routerLink]="['/mangas/updates']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_updates"></use></svg><span> Manga Updates</span></a>
-              <a *ngIf="!auth.authenticated()" (click)="auth.login()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_updates"></use></svg><span> Manga Updates</span></a>
+              <a *ngIf="auth.authenticated()" [routerLink]="['/mangas/updates']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_updates"></use></svg><span class="navLinkText"> Manga Updates</span><span class="navLinkDetail"></span></a>
+              <a *ngIf="!auth.authenticated()" (click)="auth.login()"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga_updates"></use></svg><span class="navLinkText"> Manga Updates</span><span class="navLinkDetail"></span></a>
             </li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a [routerLink]="['/animes']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#anime_svg"></use></svg><span> Animes</span></a></li>
-            <li><a [routerLink]="['/animes/followed']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#anime_follow_svg"></use></svg><span> Followed Animes</span></a></li>
-            <li><a [routerLink]="['/animes/updates']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#anime_updates_svg"></use></svg><span> New Animes</span></a></li>
+            <li><a [routerLink]="['/animes']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#anime_svg"></use></svg><span class="navLinkText"> Animes</span><span class="navLinkDetail"></span></a></li>
+            <li><a [routerLink]="['/animes/followed']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#anime_follow_svg"></use></svg><span class="navLinkText"> Followed Animes</span><span class="navLinkDetail"></span></a></li>
+            <li><a [routerLink]="['/animes/updates']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#anime_updates_svg"></use></svg><span class="navLinkText"> New Animes</span><span class="navLinkDetail"></span></a></li>
           </ul>
           <ul *ngIf="auth.isAdmin()" class="nav nav-sidebar">
-            <li><a [routerLink]="['/admin']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga"></use></svg><span> Admin</span></a></li>
+            <li><a [routerLink]="['/admin']" [routerLinkActive]="['active']"><svg viewBox="0 0 32 32" class="nav-image"><use xlink:href="/assets/images/nav/mangasurv.svg#manga"></use></svg><span class="navLinkText"> Admin</span><span class="navLinkDetail"></span></a></li>
           </ul>
         </div>
       </div>
